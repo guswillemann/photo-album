@@ -1,0 +1,48 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+:root {
+  font-size: 10px;
+}
+
+body, button, input, textarea {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  --primary-color: #5E35B1;
+  --primary-contrast: #FFFFFF;
+  --secondary-color: #51D1E1;
+  --secondary-contrast: #000000;
+
+  --background-color: #FFFFFF;
+  --background-contrast: #000000;
+  
+  --gray-color: gray;
+  --gray-contrast: white;
+  
+  --border-radius: 6px;
+  --theme-icon: url('/icons/sun.svg');
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: 8rem 1fr 10rem;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}

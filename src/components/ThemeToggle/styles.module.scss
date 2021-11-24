@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  background-image: var(--theme-icon);
+  background-size: cover;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+
+  &:hover {
+    filter: brightness(0.95);
+    cursor: pointer;
+  }
+}

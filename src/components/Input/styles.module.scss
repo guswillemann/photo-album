@@ -1,0 +1,9 @@
+.wrapper {
+  border: 2px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: 0 1rem;
+
+  &::placeholder {
+    opacity: 0.8;
+  }
+}

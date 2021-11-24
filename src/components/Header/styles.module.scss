@@ -1,0 +1,16 @@
+.wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--background-color);
+  box-shadow: 0 1px 5px 0 var(--primary-color);
+}
+
+.filterInput {
+  min-width: 60rem;
+  height: 3rem;
+}

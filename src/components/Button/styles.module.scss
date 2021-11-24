@@ -1,0 +1,42 @@
+.wrapper {
+  --btn-color: var(--gray-color);
+  --btn-contrast: var(--gray-contrast);
+
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+
+  &:not(:disabled) {
+    &.primary-color {
+      --btn-color: var(--primary-color);
+      --btn-contrast: var(--primary-contrast);
+    }
+    
+    &.secondary-color {
+      --btn-color: var(--secondary-color);
+      --btn-contrast: var(--secondary-contrast);
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--btn-color);
+      color: var(--btn-contrast);
+      filter: brightness(0.95);
+    }
+  }
+
+  &.default {
+    background-color: var(--btn-color);
+    color: var(--btn-contrast);
+  }
+
+  &.outline {
+    border-color: var(--btn-color);
+    color: var(--btn-color);
+    font-weight: 700;
+    background-color: transparent;
+
+    transition-property: color, background-color;
+    transition: 100ms ease-in-out;
+  }
+}

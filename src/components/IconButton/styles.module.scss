@@ -1,0 +1,10 @@
+.wrapper {
+  background-color: transparent;
+  border: none;
+  font-size: 0;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.5);
+  }
+}
