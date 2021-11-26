@@ -1,0 +1,4 @@
+@mixin transiton ($propertys...) {
+  transition: 200ms ease-in-out;
+  transition-property: $propertys;
+}

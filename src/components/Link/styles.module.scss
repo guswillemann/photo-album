@@ -1,0 +1,16 @@
+.wrapper {
+  text-decoration: none;
+  font-weight: 700;
+
+  &.primaryColor {
+    color: var(--primary-color);
+  }
+  
+  &.secondaryColor {
+    color: var(--secondary-color);
+  }
+
+  &:hover {
+    filter: brightness(0.85);
+  }
+}

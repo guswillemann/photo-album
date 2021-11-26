@@ -31,13 +31,14 @@ body {
   
   --border-radius: 6px;
   --theme-icon: url('/icons/sun.svg');
+  --content-width: 80%;
 }
 
 .app-container {
-  display: grid;
-  grid-template-rows: 8rem 1fr 10rem;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  min-height: 100vh;
 }
 
 main {

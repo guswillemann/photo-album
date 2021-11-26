@@ -1,4 +1,61 @@
+@use '../../styles/mixins.scss';
+
 .wrapper {
   background-color: var(--primary-color);
-  border-top: 2px solid var(--secondary-color);
+  box-shadow: 0 -2px 5px 0 var(--secondary-color);
+  color: var(--primary-contrast);
+
+  --height: 12rem;
+
+  height: var(--height);
+
+  position: sticky;
+  bottom: calc(var(--height) * -1 + 3rem);
+  @include mixins.transiton(bottom, transform);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 0.75rem 0 2rem;
+
+  & > button {
+    width: 4.5rem;
+    height: 1.5rem;
+    @include mixins.transiton(transform);
+  }
+
+  &.show {
+    bottom: 0;
+
+    & > button {
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+.footerContent {
+  max-width: var(--content-width);
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.guswillemannLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 3rem);
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0;
 }
