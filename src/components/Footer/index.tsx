@@ -10,13 +10,13 @@ const guswillemannLinks = {
 };
 
 const leadsterUrl = 'https://leadster.com.br/';
-const pexelUrl = 'https://www.pexels.com/';
+const pexelsUrl = 'https://www.pexels.com/';
 
 export default function Footer() {
   const [isShowing, setIsShowing] = useState(false);
 
   const Leadster = <Link target="_blank" rel="noopener" href={leadsterUrl}>Leadster</Link>;
-  const Pexel = <Link target="_blank" rel="noopener" href={pexelUrl}>Pexel</Link>;
+  const Pexels = <Link target="_blank" rel="noopener" href={pexelsUrl}>Pexels</Link>;
   
   const handleClick = () => setIsShowing((old) => !old);
 
@@ -32,7 +32,7 @@ export default function Footer() {
              {Leadster} Front-End Activity
           </p>
           <p>
-            Photos provided by {Pexel}
+            Photos provided by {Pexels}
           </p>
         </div>
         <div className={styles.footerColumn}>
