@@ -11,7 +11,7 @@
 
   position: sticky;
   bottom: calc(var(--height) * -1 + 3rem);
-  @include mixins.transiton(bottom, transform);
+  @include mixins.transition(bottom, transform);
 
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   & > button {
     width: 4.5rem;
     height: 1.5rem;
-    @include mixins.transiton(transform);
+    @include mixins.transition(transform);
   }
 
   &.show {
