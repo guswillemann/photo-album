@@ -1,0 +1,38 @@
+@use '../../styles/mixins.scss';
+
+.wrapper {
+  box-sizing: initial;
+  position: relative;
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  border: 2px solid var(--secondary-color);
+  background-color: transparent;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  img {
+    max-width: 100%;
+  }
+  
+  &::after {
+    @include mixins.transition(left);
+    position: absolute;
+    top: 0;
+    content: '';
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+  }
+
+  &.stateOne::after {
+    left: 50%;
+  }
+  
+  &.stateTwo::after {
+    left: 0;
+  }
+}

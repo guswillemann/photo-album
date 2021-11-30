@@ -2,3 +2,26 @@
   transition: 200ms ease-in-out;
   transition-property: $propertys;
 }
+
+@mixin paper {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 5px 0 var(--primary-color);
+  padding: 0.5rem;
+}
+
+@mixin headerDropdown {
+  @include paper();
+  @include transition(top, opacity, visibility);
+
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  visibility: hidden;
+
+  &.visible {
+    top: calc(100% + 3rem);
+    opacity: 1;
+    visibility: initial;
+  }
+}
