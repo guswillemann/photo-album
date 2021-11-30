@@ -1,9 +1,17 @@
 .wrapper {
   border: 2px solid var(--secondary-color);
+  color: var(--background-contrast);
   border-radius: var(--border-radius);
   padding: 0 1rem;
 
   &::placeholder {
     opacity: 0.8;
+  }
+
+  [data-theme=light] & {
+    background-color: var(--background-color);
+  }
+  [data-theme=dark] & {
+    background-color: #000000;
   }
 }
