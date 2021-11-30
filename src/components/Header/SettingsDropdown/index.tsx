@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ToggleButton } from '../..';
-import { useToggle } from '../../../hooks';
+import { useSettingsContext } from '../../../hooks';
 import styles from './styles.module.scss';
 
 type SettingsDropdownProps = {
@@ -8,8 +8,12 @@ type SettingsDropdownProps = {
 };
 
 export default function SettingsDropdown({ isVisible }: SettingsDropdownProps) {
-  const [isAutoLoad, toggleAutoLoad] = useToggle(true);
-  const [isThemeLight, toggleTheme] = useToggle(true);
+  const {
+    isAutoLoad,
+    toggleAutoLoad,
+    isThemeLight,
+    toggleTheme
+  } = useSettingsContext();
 
   return (
     <section className={clsx([

@@ -18,23 +18,39 @@ body, button, input, textarea {
 }
 
 body {
-  --primary-color: #5E35B1;
-  --primary-contrast: #FFFFFF;
-  --secondary-color: #51D1E1;
-  --secondary-contrast: #000000;
-
-  --background-color: #FFFFFF;
-  --background-contrast: #000000;
-  
-  --gray-color: gray;
-  --gray-contrast: white;
-  
   --border-radius: 6px;
-  --theme-icon: url('/icons/sun.svg');
   --content-width: 80%;
+
+  &[data-theme=light] {
+    --primary-color: #5E35B1;
+    --primary-contrast: #FFFFFF;
+    --secondary-color: #51D1E1;
+    --secondary-contrast: #000000;
+
+    --background-color: #FFFFFF;
+    --background-contrast: #000000;
+    
+    --gray-color: gray;
+    --gray-contrast: white;
+  }
+  
+  &[data-theme=dark] {
+    --primary-color: #5E35B1;
+    --primary-contrast: #FFFFFF;
+    --secondary-color: #51D1E1;
+    --secondary-contrast: #000000;
+
+    --background-color: #222222;
+    --background-contrast: #FFFFFF;
+    
+    --gray-color: gray;
+    --gray-contrast: white;
+  }
 }
 
 .app-container {
+  background-color: var(--background-color);
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
