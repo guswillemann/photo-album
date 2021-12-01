@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <main>
         <PhotosList photoDataArr={photos} />
-        {isAutoLoad && <Button variant="default">Load more</Button>}
+        {!isAutoLoad && <Button variant="default">Load more</Button>}
       </main>
       <Footer />
     </div>
