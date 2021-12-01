@@ -30,8 +30,18 @@ const ToggleButton = ({
       ])}
       {...props}
     >
-      <img src={iconsSrc.stateOne} alt="Icon state " />
-      <img src={iconsSrc.stateTwo} alt="Icon state " />
+      <img className={clsx(
+          iconsSrc === defaultIconsSrc && styles.defaultIcons
+        )}
+        src={iconsSrc.stateOne}
+        alt="Icon state "
+      />
+      <img className={clsx(
+          iconsSrc === defaultIconsSrc && styles.defaultIcons
+        )}
+        src={iconsSrc.stateTwo}
+        alt="Icon state "
+      />
     </button>
   );
 }

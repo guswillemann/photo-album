@@ -35,4 +35,9 @@
   &.stateTwo::after {
     left: 0;
   }
+
+}
+
+[data-theme=dark] .defaultIcons {
+  filter: invert(1);
 }
