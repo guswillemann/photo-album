@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { PhotoData } from '..';
-import { IconButton } from '../..';
+import { IconButton, Modal } from '../..';
+import { useToggle } from '../../../hooks';
+import PhotoDetails from './PhotoDetails';
 import styles from './styles.module.scss';
 
 type PhotoProps = {
@@ -8,8 +10,16 @@ type PhotoProps = {
 };
 
 export default function PhotoCard({ photoData }: PhotoProps) {
+  const [isModalOpen, toggleModal] = useToggle(false);
+
   return (
     <li className={styles.wrapper}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={toggleModal}
+      >
+        <PhotoDetails photoData={photoData} /> 
+      </Modal>
       <Image
         src={photoData.src.large}
         width={photoData.width}
@@ -22,6 +32,7 @@ export default function PhotoCard({ photoData }: PhotoProps) {
         className={styles.zoomBtn}
         iconSrc="/icons/magnifier.svg"
         iconAlt="Zoom button - Magnifier"
+        onClick={toggleModal}
       />
       <div className={styles.info}>
         <span>Photographer:</span>

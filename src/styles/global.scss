@@ -46,6 +46,10 @@ body {
     --gray-color: gray;
     --gray-contrast: white;
   }
+
+  &[data-scroll=lock] {
+    overflow: hidden;
+  }
 }
 
 .app-container {

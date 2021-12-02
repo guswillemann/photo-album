@@ -3,12 +3,12 @@
   transition-property: $propertys;
 }
 
-@mixin paper {
+@mixin paper ($color: var(--primary-color), $padding: 2rem) {
   background-color: var(--background-color);
   border-radius: var(--border-radius);
-  box-shadow: 0 1px 5px 0 var(--primary-color);
+  box-shadow: 0 1px 5px 0 $color;
   color: var(--background-contrast);
-  padding: 2rem;
+  padding: $padding;
 }
 
 @mixin headerDropdown {
@@ -25,4 +25,8 @@
     opacity: 1;
     visibility: initial;
   }
+}
+
+@mixin animation ($name) {
+  animation: $name 500ms ease-in-out forwards;
 }

@@ -1,0 +1,32 @@
+@use '../../styles/mixins.scss';
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  @include mixins.animation(fadein);
+
+  background-color: #00000088;
+  backdrop-filter: blur(5px);
+
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  overflow: auto;
+
+  padding: 5% 20%;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 101;
+}

@@ -1,0 +1,33 @@
+@use '../../../../styles/mixins.scss';
+
+@keyframes grow {
+  from {
+    transform: scale(0.75);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.wrapper {
+  @include mixins.paper(var(--secondary-color), 0);
+  @include mixins.animation(grow);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5vw;
+}
+
+.info {
+  display: flex;
+  gap: 4rem;
+  padding: 2rem;
+  
+}
+
+.photographerName {
+  font-size: 2rem;
+}
+
+.photoContainer {
+  font-size: 0;
+}

@@ -4,6 +4,7 @@ import styles from './styles.module.scss';
 
 export type PhotoData = {
   id: string;
+  url: string;
   width: number;
   height: number;
   photographer: string;
