@@ -9,6 +9,15 @@
   }
 }
 
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .wrapper {
   @include mixins.animation(fadein);
 
@@ -21,7 +30,9 @@
 
   overflow: auto;
 
-  padding: 5% 20%;
+  &.closing {
+    @include mixins.animation(fadeout);
+  }
 }
 
 .closeBtn {

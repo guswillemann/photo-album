@@ -1,7 +1,8 @@
 import clsx from 'clsx';
-import { FC, MouseEvent as ReactMouseEvent } from 'react';
+import { FC, MouseEvent as ReactMouseEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { IconButton, ScrollLock } from '..';
+import { useToggle } from '../../hooks';
 import styles from './styles.module.scss';
 
 type ModalProps = {
@@ -10,12 +11,25 @@ type ModalProps = {
 };
 
 const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
-  if (!isOpen) return null;
+  const [isClosing, toggleIsClosing] = useToggle(false);
+
+  useEffect(() => {
+    if (!isClosing) return;
+    const timeoutCallback = () => {
+      onClose();
+      toggleIsClosing();
+    };
+
+    const timeoutId = setTimeout(timeoutCallback, 500);
+    return () => clearTimeout(timeoutId);
+  }, [isClosing, onClose, toggleIsClosing]);
 
   const handleModalClick = (e: ReactMouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (e.target instanceof HTMLElement && e.target.id === 'modal-container') onClose();
+    if (isClosing) return;
+    if (e.target instanceof HTMLElement && e.target.id === 'modal-container') toggleIsClosing();
   };
 
+  if (!isOpen) return null;
   return createPortal((
       <>
         <ScrollLock />
@@ -28,7 +42,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
         />
         <div className={clsx([
             styles.wrapper,
-            isOpen && styles.open
+            isClosing && styles.closing,
           ])}
           id="modal-container"
           onClick={handleModalClick}
