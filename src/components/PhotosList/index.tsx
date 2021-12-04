@@ -25,20 +25,41 @@ type PhotosListProps = {
   photoDataArr: PhotoData[];
 };
 
+type TReduceHelperObj = {
+  columnsHeights: number[];
+  columnsData: ReactNode[][];
+};
+
+const selectColumn = (columnsHeights: number[]) => {
+  const minHeight = Math.min(...columnsHeights);
+  return columnsHeights.indexOf(minHeight);
+};
+
 function PhotosList({ photoDataArr }: PhotosListProps) {
-  const listColumns = photoDataArr.reduce((columns, photo, i) => {
-    const column = i % 4;
+  const reduceHelperObj: TReduceHelperObj = { columnsHeights: [0, 0, 0, 0], columnsData: []};
+
+  const { columnsData } = photoDataArr.reduce((columns, photo, i) => {
+    const { columnsData, columnsHeights } = columns;
+    const column = selectColumn(columnsHeights);
+
+    const photoHeightRatio = photo.height / photo.width;
+
     const photoEl = <PhotoCard key={photo.id} photoData={photo} />;
 
-    if (columns[column]) columns[column] = [...columns[column], photoEl];
-    else columns[column] = [photoEl];
+    if (columnsData[column]) {
+      columnsData[column] = [...columnsData[column], photoEl];
+      columnsHeights[column] += photoHeightRatio
+    } else {
+      columnsData[column] = [photoEl];
+      columnsHeights[column] += photoHeightRatio;
+    }
 
     return columns;
-  }, [] as ReactNode[][]);
+  }, reduceHelperObj);
 
   return (
     <ul className={styles.wrapper}>
-      {listColumns.map((column, i) => (
+      {columnsData.map((column, i) => (
         <div key={`list-column-${i}`} className={styles.listColumn}>
           {column}
         </div>
