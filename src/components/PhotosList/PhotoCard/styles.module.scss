@@ -2,26 +2,8 @@
   --transition-duration: 200ms;
 
   position: relative;
-}
 
-.zoomBtn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-
-  padding: 0.5rem;
-  backdrop-filter: blur(5px);
-
-  background-color: var(--primary-contrast);
-  border: 2px solid var(--primary-color);
-  border-radius: var(--border-radius);
-
-  opacity: 0;
-  transition: opacity var(--transition-duration) ease-in-out;
-
-  .wrapper:hover &, .wrapper:focus-within & {
-    opacity: 1;
-  }
+  cursor: pointer;
 }
 
 .info {
