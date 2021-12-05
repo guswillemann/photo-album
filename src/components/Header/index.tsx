@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import { IconButton, Input } from '..';
-import { useDropdown, useOutsideClick, useToggle } from '../../hooks';
+import { useDropdown } from '../../hooks';
 import SettingsDropdown from './SettingsDropdown';
 import styles from './styles.module.scss';
 
@@ -20,8 +20,9 @@ export default function Header() {
         />
         <form ref={filterForm}>
           <Input
+            name="theme"
             className={styles.filterInput}
-            placeholder="Filter text"
+            placeholder="Theme text"
           />
           <IconButton
             className={styles.infoBtn}
