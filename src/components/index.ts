@@ -1,3 +1,4 @@
+export { default as Button } from './Button';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as IconButton } from './IconButton';
@@ -7,4 +8,3 @@ export { default as Modal } from './Modal';
 export { default as PhotosList } from './PhotosList';
 export { default as ScrollLock } from './ScrollLock';
 export { default as ToggleButton } from './ToggleButton';
-
