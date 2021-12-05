@@ -17,7 +17,7 @@
       --btn-contrast: var(--secondary-contrast);
     }
 
-    &:hover {
+    &:hover, &:focus {
       cursor: pointer;
       background-color: var(--btn-color);
       color: var(--btn-contrast);
@@ -38,5 +38,13 @@
 
     transition-property: color, background-color;
     transition: 100ms ease-in-out;
+  }
+
+  &.textOnly {
+    padding: 4px;
+    color: var(--btn-color);
+    background: none;
+    font-weight: 700;
+    font-size: 2rem;
   }
 }

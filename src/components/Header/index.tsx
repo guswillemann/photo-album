@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { IconButton, Input } from '..';
 import { useDropdown } from '../../hooks';
+import Button from '../Button';
 import SettingsDropdown from './SettingsDropdown';
 import styles from './styles.module.scss';
 
 export default function Header() {
-  const [isFilterInfoVisible, toggleFilterInfo, filterForm] = useDropdown<HTMLFormElement>(false);
+  const [isThemeInfoVisible, toggleThemeInfo, themeForm] = useDropdown<HTMLFormElement>(false);
   const [isSettingsVisible, toggleSettings, settingsDiv] = useDropdown<HTMLDivElement>(false);
 
   return (
@@ -18,20 +19,26 @@ export default function Header() {
           width={85}
           height={40}
         />
-        <form ref={filterForm}>
+        <form ref={themeForm} className={styles.themeForm}>
           <Input
             name="theme"
-            className={styles.filterInput}
             placeholder="Theme text"
           />
-          <IconButton
-            className={styles.infoBtn}
-            type="button"
-            iconSrc="/icons/info.svg"
-            iconAlt="Icon with the letter I in a circle"
-            onClick={toggleFilterInfo}
-          />
-          <div className={clsx([styles.filterInfo, isFilterInfoVisible && styles.visible])}>
+          <div className={styles.formButtons}>
+            <Button
+              type="submit"
+              variant="textOnly"
+            >
+              Submit
+            </Button>
+            <IconButton
+              type="button"
+              iconSrc="/icons/info.svg"
+              iconAlt="Icon with the letter I in a circle"
+              onClick={toggleThemeInfo}
+            />
+          </div>
+          <div className={clsx([styles.themeInfo, isThemeInfoVisible && styles.visible])}>
             <p>{"It's possible to filter the photos using keywords like: 'Nature', 'Tigers', 'People'. Or it could be something specific like 'Group of people working.'"}</p>
           </div>
         </form>
