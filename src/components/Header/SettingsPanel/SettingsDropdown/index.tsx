@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { ToggleButton } from '../..';
-import { useSettingsContext } from '../../../hooks';
+import { ToggleButton } from '../../..';
+import { useSettingsContext } from '../../../../hooks';
 import styles from './styles.module.scss';
 
 type SettingsDropdownProps = {
