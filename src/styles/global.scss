@@ -1,3 +1,5 @@
+@use './breakpoints.scss';
+
 *, *::after, *::before {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +21,7 @@ body, button, input, textarea {
 
 body {
   --border-radius: 6px;
-  --content-width: 80%;
+  --content-width: 100%;
 
   &[data-theme=light] {
     --primary-color: #5E35B1;
@@ -49,6 +51,10 @@ body {
 
   &[data-scroll=lock] {
     overflow: hidden;
+  }
+
+  @include breakpoints.xl {
+    --content-width: 120rem;
   }
 }
 
