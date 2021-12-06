@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import { PhotoData } from '..';
 import { Modal } from '../..';
 import { useToggle } from '../../../hooks';
+import { Photo } from '../../../types';
 import PhotoDetails from './PhotoDetails';
 import styles from './styles.module.scss';
 
 type PhotoProps = {
-  photoData: PhotoData;
+  photoData: Photo;
 };
 
 export default function PhotoCard({ photoData }: PhotoProps) {

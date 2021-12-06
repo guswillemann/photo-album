@@ -1,11 +1,11 @@
-import { FC } from 'react';
 import Image from 'next/image';
-import { PhotoData } from '../..';
-import styles from './styles.module.scss';
+import { FC } from 'react';
 import { Link } from '../../..';
+import { Photo } from '../../../../types';
+import styles from './styles.module.scss';
 
 type PhotoDetailsProps = {
-  photoData: PhotoData;
+  photoData: Photo;
 };
 
 const PhotoDetails: FC<PhotoDetailsProps> = ({ photoData }) => {
