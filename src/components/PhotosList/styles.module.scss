@@ -1,9 +1,10 @@
 .wrapper {
   --list-gap: 1rem;
+  --number-of-columns: 2;
 
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--number-of-columns), 1fr);
   gap: var(--list-gap);
   padding: 0 1rem;
   margin: auto;
