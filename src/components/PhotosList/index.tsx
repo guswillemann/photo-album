@@ -18,7 +18,7 @@ const breakpointColumnsMap = {
 };
 
 function PhotosList({ photoDataArr }: PhotosListProps) {
-  const currentBreakpoint = useBreakpoints();
+  const { currentBreakpoint } = useBreakpoints();
   
   const numberOfColumns = breakpointColumnsMap[currentBreakpoint];
   const columnsData = createColumns(numberOfColumns, photoDataArr);

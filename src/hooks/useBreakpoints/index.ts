@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 
 type ScreenSize = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 type Breakpoint = [ScreenSize, number];
@@ -18,19 +18,16 @@ function findBreakpoint(screenWidth: number) {
   return breakpoint[0];
 }
 
-export default function useBreakpoints() {
-  const [screenWidth, setScreenWidth] = useState(0);
+const reducer = () => findBreakpoint(window.innerWidth);
 
-  useEffect(() => setScreenWidth(window.innerWidth), []);
+export default function useBreakpoints() {
+  const [currentBreakpoint, updateBreakpoint] = useReducer(reducer, 'xs');
 
   useEffect(() => {
-    const callback = () => setScreenWidth(window.innerWidth);
-
-    window.addEventListener('resize', callback )
-    return () => window.removeEventListener('resize', callback)
+    updateBreakpoint();
+    window.addEventListener('resize', updateBreakpoint);
+    return () => window.removeEventListener('resize', updateBreakpoint);
   }, []);
   
-  const currentBreakpoint = findBreakpoint(screenWidth);
-
-  return currentBreakpoint;
+  return { currentBreakpoint };
 }
