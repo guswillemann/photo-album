@@ -1,3 +1,4 @@
+@use '../../styles/breakpoints.scss';
 @use '../../styles/mixins.scss';
 
 .wrapper {
@@ -5,7 +6,7 @@
   box-shadow: 0 -2px 5px 0 var(--secondary-color);
   color: var(--primary-contrast);
 
-  --height: 12rem;
+  --height: 22rem;
 
   height: var(--height);
 
@@ -33,6 +34,10 @@
       transform: rotateX(180deg);
     }
   }
+
+  @include breakpoints.sm {
+    --height: 12rem;
+  }
 }
 
 .footerContent {
@@ -40,19 +45,30 @@
   height: 100%;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
+
+  @include breakpoints.sm {
+    flex-direction: row;
+  }
 }
 
 .footerColumn {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
+  gap: 3rem;
+
+  @include breakpoints.sm {
+    justify-content: space-between;
+    gap: 0;
+  }
 }
 
 .guswillemannLinks {
+  margin-top: -2rem;
   display: grid;
   grid-template-columns: repeat(3, 3rem);
   justify-content: center;
