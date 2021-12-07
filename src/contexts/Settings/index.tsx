@@ -21,6 +21,8 @@ const SettingsProvider: FC = ({ children }) => {
     const storeAutoLoad = localStorage.getItem(autoLoadStoreKey);
     const storeTheme = localStorage.getItem(themeStoreKey);
 
+    if (storeAutoLoad === null || storeTheme === null) return;
+
     if (storeAutoLoad !== 'true') toggleAutoLoad();
     if (storeTheme !== 'light') toggleTheme();
   }, [toggleTheme, toggleAutoLoad]);
