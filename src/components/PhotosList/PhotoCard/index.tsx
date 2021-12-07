@@ -13,12 +13,10 @@ export default function PhotoCard({ photoData }: PhotoProps) {
   const [isModalOpen, toggleModal] = useToggle(false);
 
   return (
-    <>
-      <li
-        onClick={toggleModal}
-        className={styles.wrapper}
-        role="button"
-      >
+    <li
+      className={styles.wrapper}
+    >
+      <button onClick={toggleModal}>
         <Image
           src={photoData.src.large}
           width={photoData.width}
@@ -31,13 +29,13 @@ export default function PhotoCard({ photoData }: PhotoProps) {
           <span>Photographer:</span>
           <p>{photoData.photographer}</p>
         </div>
-      </li>
+      </button>
       <Modal
         isOpen={isModalOpen}
         onClose={toggleModal}
       >
         <PhotoDetails photoData={photoData} /> 
       </Modal>
-    </>
+    </li>
   );
 }

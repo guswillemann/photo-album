@@ -8,3 +8,4 @@ export { default as Modal } from './Modal';
 export { default as PhotosList } from './PhotosList';
 export { default as ScrollLock } from './ScrollLock';
 export { default as ToggleButton } from './ToggleButton';
+export { default as SEO } from './SEO';

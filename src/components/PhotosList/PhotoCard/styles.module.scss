@@ -3,7 +3,12 @@
 
   position: relative;
 
-  cursor: pointer;
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: unset;
+  }
 }
 
 .info {
