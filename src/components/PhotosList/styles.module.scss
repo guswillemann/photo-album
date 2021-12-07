@@ -9,7 +9,7 @@
   padding: 0 1rem;
   margin: auto;
   width: 150rem;
-  max-width: 100vw;
+  max-width: var(--content-width);
 }
 
 .listColumn {
