@@ -21,13 +21,15 @@ export default function Home({ initialPageData }: HomeProps) {
     
     photosAPI.internal.getNextPage(pageData.nextPage)
       .then((newPageData) => {
-        setPageData((current) => ({
-          ...current,
-          photos: [...current.photos, ...newPageData.photos],
-          nextPage: newPageData.nextPage,
-        }))
+        setIsFetching(false)
+        setPageData((current) => {
+
+          return {
+            ...current,
+            photos: [...current.photos, ...newPageData.photos],
+            nextPage: newPageData.nextPage,
+        }})
       })
-      .finally(() => setIsFetching(false));
 
   }, [isFetching, pageData]);
 
