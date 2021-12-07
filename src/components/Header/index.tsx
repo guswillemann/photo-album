@@ -7,6 +7,8 @@ export default function Header() {
     <header className={styles.wrapper}>
       <div className={styles.headerContent}>
         <img
+          width="85"
+          height="40"
           src="/images/logo.svg"
           alt="Photo Album Logo"
           className={styles.logo}

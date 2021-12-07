@@ -13,7 +13,7 @@ export default function IconButton({className, iconSrc, iconAlt, ...props }: Ico
       styles.wrapper,
       className
     ])} {...props}>
-      <img src={iconSrc} alt={iconAlt} />
+      <img width="30" height="30" src={iconSrc} alt={iconAlt} />
     </button>
   );
 }

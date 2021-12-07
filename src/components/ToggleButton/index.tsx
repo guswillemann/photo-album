@@ -4,21 +4,33 @@ import styles from './styles.module.scss';
 
 interface ToggleButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isStateOne: boolean;
-  iconsSrc?: {
-    stateOne: string;
-    stateTwo: string;
+  icons?: {
+    stateOne: {
+      src: string;
+      alt: string;
+    }
+    stateTwo: {
+      src: string;
+      alt: string;
+    }
   };
 };
 
-const defaultIconsSrc = {
-  stateOne: '/icons/on.svg',
-  stateTwo: '/icons/off.svg',
+const defaultIcons = {
+  stateOne: {
+    src: '/icons/on.svg',
+    alt: 'State On Icon'
+  },
+  stateTwo: {
+    src: '/icons/off.svg',
+    alt: 'State Off Icon'
+  },
 };
 
 const ToggleButton = ({
   className,
   isStateOne,
-  iconsSrc = defaultIconsSrc,
+  icons = defaultIcons,
   ...props
 }: ToggleButtonProps) => {
   return (
@@ -30,17 +42,23 @@ const ToggleButton = ({
       ])}
       {...props}
     >
-      <img className={clsx(
-          iconsSrc === defaultIconsSrc && styles.defaultIcons
+      <img
+        className={clsx(
+          icons === defaultIcons && styles.defaultIcons
         )}
-        src={iconsSrc.stateOne}
-        alt="Icon state "
+        src={icons.stateOne.src}
+        alt={icons.stateOne.alt}
+        width="30"
+        height="30"
       />
-      <img className={clsx(
-          iconsSrc === defaultIconsSrc && styles.defaultIcons
+      <img
+        className={clsx(
+          icons === defaultIcons && styles.defaultIcons
         )}
-        src={iconsSrc.stateTwo}
-        alt="Icon state "
+        src={icons.stateTwo.src}
+        alt={icons.stateTwo.alt}
+        width="30"
+        height="30"
       />
     </button>
   );

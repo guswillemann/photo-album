@@ -36,9 +36,15 @@ export default function SettingsDropdown({ isVisible }: SettingsDropdownProps) {
           role="switch"
           isStateOne={isThemeLight}
           onClick={toggleTheme}
-          iconsSrc={{
-            stateOne: '/icons/sun.svg',
-            stateTwo: '/icons/moon.svg',
+          icons={{
+            stateOne: {
+              src: '/icons/sun.svg',
+              alt: 'Sun Icon',
+            },
+            stateTwo: {
+              src: '/icons/moon.svg',
+              alt: 'Moon Icon',
+            },
           }}
         />
       </div>

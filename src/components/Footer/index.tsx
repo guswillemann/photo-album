@@ -40,7 +40,12 @@ export default function Footer() {
           <div className={styles.guswillemannLinks}>
             {Object.entries(guswillemannLinks).map(([name, url]) => (
               <Link key={name} target="_blank" rel="noopener" href={url}>
-                <img src={`/icons/${name}.svg`} alt={`${name} Icon`} />
+                <img
+                  width="30"
+                  height="30"
+                  src={`/icons/${name}.svg`}
+                  alt={`${name} Icon`}
+                />
               </Link>
             ))}
           </div>
