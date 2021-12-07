@@ -33,8 +33,8 @@ const fetchExternalPhotosApi = async (url: string) => {
   return createPageData(data);
 };
 
-const defaultUrl = 'https://api.pexels.com/v1/curated?per_page=24';
-const themedUrl = 'https://api.pexels.com/v1/search?per_page=24';
+const defaultUrl = 'https://api.pexels.com/v1/curated?per_page=24&page=1';
+const themedUrl = 'https://api.pexels.com/v1/search?per_page=24&page=1';
 
 const externalPhotosAPI = {
   async getInitialPage(theme?: string) {
