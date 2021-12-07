@@ -55,21 +55,21 @@ export default function Home({ initialPageData }: HomeProps) {
       <Header />
       <main>
         <PhotosList photoDataArr={pageData.photos} />
-          {!isAutoLoad ? (
-            <Button
-              type="button"  
-              onClick={handleLoadMore}
-              variant="default"
-            >
-              Load more
-            </Button>
-          ) : (
-            <span
-              ref={autoLoadBoundry}
-            >
-              {Boolean(pageData.nextPage) && 'Loading...'}
-            </span>
-          )}
+        {!isAutoLoad ? (
+          <Button
+            type="button"  
+            onClick={handleLoadMore}
+            variant="default"
+          >
+            Load more
+          </Button>
+        ) : (
+          <span
+            ref={autoLoadBoundry}
+          >
+            {Boolean(pageData.nextPage) && 'Loading...'}
+          </span>
+        )}
       </main>
       <Footer />
     </div>
