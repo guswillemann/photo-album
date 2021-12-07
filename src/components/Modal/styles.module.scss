@@ -30,6 +30,10 @@
 
   overflow: auto;
 
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
   &.closing {
     @include mixins.animation(fadeout);
   }
