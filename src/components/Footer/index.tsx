@@ -25,7 +25,13 @@ export default function Footer() {
       styles.wrapper,
       isShowing && styles.show,
     ])}>
-      <IconButton onClick={handleClick} iconSrc="/icons/chevron.svg" iconAlt="up-arrow" />
+      <IconButton
+        onClick={handleClick}
+        iconSrc="/icons/chevron.svg"
+        iconAlt="up-arrow"
+        iconWidth={45}
+        iconHeight={15}
+      />
       <div className={styles.footerContent}>
         <div className={styles.footerColumn}>
           <p>
