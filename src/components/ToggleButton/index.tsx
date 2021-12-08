@@ -35,6 +35,7 @@ const ToggleButton = ({
 }: ToggleButtonProps) => {
   return (
     <button
+      type="button"
       className={clsx([
         styles.wrapper,
         isStateOne ? styles.stateOne : styles.stateTwo, 
