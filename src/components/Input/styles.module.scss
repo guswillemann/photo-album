@@ -1,5 +1,6 @@
 .wrapper {
-  border: 2px solid var(--secondary-color);
+  border: none;
+  box-shadow: 0 1px 5px 1px var(--secondary-color);
   color: var(--background-contrast);
   border-radius: var(--border-radius);
   padding: 0 1rem;
