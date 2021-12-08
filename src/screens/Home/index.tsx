@@ -57,7 +57,11 @@ export default function Home({ initialPageData }: HomeProps) {
       <main className={styles.main}>
         <PhotosList photoDataArr={pageData.photos} />
         {!isAutoLoad 
-          ? <LoadMoreBtn lodaMoreCallback={handleLoadMore} />
+          ? <LoadMoreBtn
+              lodaMoreCallback={handleLoadMore}
+              isFetching={isFetching}
+            />
+            
           : <AutoLoadBoundry
               ref={autoLoadBoundry}
               isFetching={isFetching}

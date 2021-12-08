@@ -1,0 +1,52 @@
+@keyframes loader {
+  0% {
+   right: 0%;
+   left: 0%;
+  }
+  25% {
+    right: 0%;
+    left: 100%;
+  }
+  50% {
+    right: 0%;
+    left: 0%;
+  }
+  75% {
+    right: 100%;
+    left: 0%;
+  }
+  100% {
+    right: 0%;
+    left: 0%;
+  }
+}
+
+.loading  {
+  position: relative;
+  color: var(--background-contrast);
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    
+    display: inline-block;
+    height: 1px;
+
+    animation: loader 2s linear infinite;
+  }
+  
+  &::before {
+    bottom: calc(100% + 3px);
+    box-shadow: 0 0 3px 1px var(--secondary-color);
+    background-color: var(--secondary-color);
+  }
+  
+  &::after {
+    top: calc(100% + 3px);
+    box-shadow: 0 0 3px 1px var(--primary-color);
+    background-color: var(--primary-color);
+    animation-direction: reverse;
+  }
+}

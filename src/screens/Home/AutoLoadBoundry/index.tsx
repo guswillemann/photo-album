@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import styles from './styles.module.scss';
+import { Loading } from '../../../components';
 
 type AutoLoadBoundryProps = {
   isFetching: boolean;
@@ -11,9 +11,8 @@ export default forwardRef<HTMLSpanElement, AutoLoadBoundryProps>(
     return (
       <span
         ref={ref}
-        className={styles.loading}
       >
-        {isFetching && 'Loading...'}
+        {isFetching && <Loading />}
       </span>
     );
   }
