@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  color: var(--background-contrast);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.emoji {
+  font-size: 4rem;
+}

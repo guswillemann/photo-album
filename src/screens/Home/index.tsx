@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { photosAPI } from '../../api';
-import { Footer, Header, PhotosList } from '../../components';
+import { PhotosList } from '../../components';
 import { useSettingsContext } from '../../hooks';
 import { PhotosPage } from '../../types';
 import AutoLoadBoundry from './AutoLoadBoundry';
+import HomeWrapper from './HomeWrapper';
 import LoadMoreBtn from './LoadMoreBtn';
-import styles from './styles.module.scss';
+import NoPhotoData from './NoPhotoData';
 
 type HomeProps = { initialPageData: PhotosPage }
 
@@ -51,25 +52,27 @@ export default function Home({ initialPageData }: HomeProps) {
     return () => observer.disconnect();
   }, [autoLoadBoundry, isAutoLoad]);
 
+  if (pageData.photos.length === 0) return (
+    <HomeWrapper>
+      <NoPhotoData />
+    </HomeWrapper>
+  );
+  
   return (
-    <>
-      <Header />
-      <main className={styles.main}>
-        <PhotosList photoDataArr={pageData.photos} />
-        {!isAutoLoad 
-          ? <LoadMoreBtn
-              lodaMoreCallback={handleLoadMore}
-              isFetching={isFetching}
-            />
-            
-          : <AutoLoadBoundry
-              ref={autoLoadBoundry}
-              isFetching={isFetching}
-              loadMoreCallback={handleLoadMore}
-            />
-        }
-      </main>
-      <Footer />
-    </>
-  )
+    <HomeWrapper>
+      <PhotosList photoDataArr={pageData.photos} />
+      {!isAutoLoad 
+        ? <LoadMoreBtn
+            lodaMoreCallback={handleLoadMore}
+            isFetching={isFetching}
+          />
+          
+        : <AutoLoadBoundry
+            ref={autoLoadBoundry}
+            isFetching={isFetching}
+            loadMoreCallback={handleLoadMore}
+          />
+      }
+    </HomeWrapper>
+  );
 }
