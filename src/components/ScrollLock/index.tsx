@@ -4,7 +4,7 @@ const ScrollLock = () => {
   useEffect(() => {
     document.body.dataset.scroll = 'lock';
     return () => {
-      document.body.dataset.scroll = undefined
+      document.body.dataset.scroll = '';
     };
   }, []);
 
