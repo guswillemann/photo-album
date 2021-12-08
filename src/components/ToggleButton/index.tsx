@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import styles from './styles.module.scss';
 
 interface ToggleButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
