@@ -7,7 +7,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SettingsProvider>
       <SEO />
-      <Component {...pageProps} />
+      <div className="app-container">
+        <Component {...pageProps} />
+      </div>
     </SettingsProvider>
   );
 }
