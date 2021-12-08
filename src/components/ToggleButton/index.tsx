@@ -48,8 +48,8 @@ const ToggleButton = ({
         )}
         src={icons.stateOne.src}
         alt={icons.stateOne.alt}
-        width="30"
-        height="30"
+        width="25"
+        height="25"
       />
       <img
         className={clsx(
@@ -57,8 +57,8 @@ const ToggleButton = ({
         )}
         src={icons.stateTwo.src}
         alt={icons.stateTwo.alt}
-        width="30"
-        height="30"
+        width="25"
+        height="25"
       />
     </button>
   );
