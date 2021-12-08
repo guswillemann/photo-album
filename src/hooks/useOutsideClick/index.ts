@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 export default function useOutsideClick<T extends HTMLElement>(callback: () => void) {
   const containerRef = useRef<T>(null);
   useEffect(() => {
-    const verifyClick = (e: MouseEvent) => {
+    const eventCallback = (e: MouseEvent | FocusEvent) => {
       if (
         containerRef.current 
         && e.target instanceof HTMLElement
@@ -12,8 +12,14 @@ export default function useOutsideClick<T extends HTMLElement>(callback: () => v
         callback();
       }
     };
-    document.addEventListener('mousedown', verifyClick);
-    return () => document.removeEventListener('mousedown', verifyClick);
+    
+    document.addEventListener('mousedown', eventCallback);
+    document.addEventListener('focusin', eventCallback);
+    
+    return () => {
+      document.removeEventListener('mousedown', eventCallback);
+      document.removeEventListener('focusin', eventCallback);
+    }
   }, [containerRef, callback]);
 
   return [containerRef];
