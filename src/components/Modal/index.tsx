@@ -31,28 +31,26 @@ const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
 
   if (!isOpen) return null;
   return createPortal((
-      <>
-        <ScrollLock />
-        <IconButton
-          className={styles.closeBtn}
-          onClick={onClose}
-          iconSrc="/icons/x.svg"
-          iconAlt="Letter X"
-          aria-label="Close modal"
-        />
-        <div className={clsx([
-            styles.wrapper,
-            isClosing && styles.closing,
-          ])}
-          id="modal-container"
-          onClick={handleModalClick}
-        >
-          {children}
-        </div>
-      </>
-    ),
-    document.getElementById('__next') as HTMLDivElement
-  );
-};
+    <div
+      className={clsx([
+        styles.modalContainer,
+        isClosing && styles.closing,
+      ])}
+      id="modal-container"
+      onClick={handleModalClick}
+    >
+      <IconButton
+        className={styles.closeBtn}
+        onClick={onClose}
+        iconSrc="/icons/x.svg"
+        iconAlt="Letter X"
+        aria-label="Close modal"
+      />
+      <ScrollLock />
+      {children}
+    </div>
+  ),
+  document.getElementById('__next') as HTMLDivElement
+)};
 
 export default Modal;

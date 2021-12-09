@@ -18,7 +18,7 @@
   }
 }
 
-.wrapper {
+.modalContainer {
   @include mixins.animation(fadein);
 
   background-color: #00000088;
@@ -34,14 +34,17 @@
   justify-items: center;
   align-items: center;
 
+  grid-template-rows: 0 1fr;
+
   &.closing {
     @include mixins.animation(fadeout);
   }
 }
 
 .closeBtn {
-  position: fixed;
+  position: sticky;
   top: 2rem;
   right: 2rem;
+  margin-left: auto;
   z-index: 101;
 }
