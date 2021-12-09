@@ -29,6 +29,10 @@ const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
     if (e.target instanceof HTMLElement && e.target.id === 'modal-container') toggleIsClosing();
   };
 
+  const handleCloseBtnClick = () => {
+    if (!isClosing) toggleIsClosing();
+  }
+
   if (!isOpen) return null;
   return createPortal((
     <div
@@ -41,7 +45,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
     >
       <IconButton
         className={styles.closeBtn}
-        onClick={onClose}
+        onClick={handleCloseBtnClick}
         iconSrc="/icons/x.svg"
         iconAlt="Letter X"
         aria-label="Close modal"
