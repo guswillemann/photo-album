@@ -25,6 +25,7 @@ export default function Footer() {
         styles.footerContainer,
         isShowing && styles.show,
       ])}
+      data-testid="footerContainer"
     >
       <IconButton
         onClick={handleClick}
@@ -32,6 +33,7 @@ export default function Footer() {
         iconAlt="up-arrow"
         iconWidth={45}
         iconHeight={15}
+        data-testid="toggleCollapseBtn"
       />
       <div className={styles.footerContent}>
         <div className={styles.footerColumn}>
