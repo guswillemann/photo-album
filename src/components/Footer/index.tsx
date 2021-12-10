@@ -22,9 +22,10 @@ export default function Footer() {
 
   return (
     <footer className={clsx([
-      styles.wrapper,
-      isShowing && styles.show,
-    ])}>
+        styles.footerContainer,
+        isShowing && styles.show,
+      ])}
+    >
       <IconButton
         onClick={handleClick}
         iconSrc="/icons/chevron.svg"

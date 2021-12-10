@@ -1,7 +1,7 @@
 @use '../../styles/breakpoints.scss';
 @use '../../styles/mixins.scss';
 
-.wrapper {
+.footerContainer {
   background-color: var(--primary-color);
   box-shadow: 0 -2px 5px 0 var(--secondary-color);
   color: var(--primary-contrast);
