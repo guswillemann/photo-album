@@ -38,6 +38,7 @@
 
   &.closing {
     @include mixins.animation(fadeout);
+    overflow: hidden;
   }
 }
 
