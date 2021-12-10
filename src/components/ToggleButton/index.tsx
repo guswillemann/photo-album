@@ -42,6 +42,7 @@ const ToggleButton = ({
         className,
       ])}
       {...props}
+      data-testid='toggleBtn'
     >
       <img
         className={clsx(
