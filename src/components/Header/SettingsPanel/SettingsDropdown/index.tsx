@@ -16,10 +16,12 @@ export default function SettingsDropdown({ isVisible }: SettingsDropdownProps) {
   } = useSettingsContext();
 
   return (
-    <section className={clsx([
-      styles.wrapper,
-      isVisible && styles.visible,
-    ])}>
+    <div
+      className={clsx([
+        styles.settingsDropdownContainer,
+        isVisible && styles.visible,
+      ])}
+    >
       <div className={styles.option}>
         <span>Auto Load Photos</span>
         <ToggleButton
@@ -48,6 +50,6 @@ export default function SettingsDropdown({ isVisible }: SettingsDropdownProps) {
           }}
         />
       </div>
-    </section>
+    </div>
   );
 }

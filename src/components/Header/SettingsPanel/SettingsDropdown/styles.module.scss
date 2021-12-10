@@ -1,6 +1,6 @@
 @use '../../../../styles/mixins.scss';
 
-.wrapper {
+.settingsDropdownContainer {
   @include mixins.headerDropdown();
 
   width: 23rem;
