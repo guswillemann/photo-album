@@ -41,6 +41,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
       ])}
       id="modal-container"
       onClick={handleModalClick}
+      data-testid="modalContainer"
     >
       <IconButton
         className={styles.closeBtn}
@@ -48,6 +49,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
         iconSrc="/icons/x.svg"
         iconAlt="Letter X"
         aria-label="Close modal"
+        data-testid="closeModalBtn"
       />
       {!isClosing && <ScrollLock />}
       {children}
