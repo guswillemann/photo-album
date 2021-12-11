@@ -7,7 +7,7 @@ export default function SettingsPanel() {
   const [isSettingsVisible, toggleSettings, settingsDiv] = useDropdown<HTMLDivElement>(false);
 
   return (
-    <div ref={settingsDiv} className={styles.settingsContainer}>
+    <section ref={settingsDiv} className={styles.settingsContainer}>
       <IconButton
         aria-label="Toggle settings panel"
         iconSrc="/icons/gear.svg"
@@ -15,6 +15,6 @@ export default function SettingsPanel() {
         onClick={toggleSettings}
       />
       <SettingsDropdown isVisible={isSettingsVisible} />
-    </div>
+    </section>
   );
 }
