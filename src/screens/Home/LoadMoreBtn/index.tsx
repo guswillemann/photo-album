@@ -4,9 +4,10 @@ import styles from './styles.module.scss';
 type LoadMoreBtnProps = {
   isFetching: boolean;
   lodaMoreCallback: () => void;
+  text?: string;
 };
 
-export default function LoadMoreBtn({ lodaMoreCallback, isFetching }: LoadMoreBtnProps) {
+export default function LoadMoreBtn({ lodaMoreCallback, isFetching, text }: LoadMoreBtnProps) {
   if (isFetching) return (
     <div className={styles.loadingWrapper}>
       <Loading />
@@ -19,7 +20,7 @@ export default function LoadMoreBtn({ lodaMoreCallback, isFetching }: LoadMoreBt
       onClick={lodaMoreCallback}
       variant="default"
     >
-      Load more
+      {text || 'Load more'}
     </Button>
   );
 }

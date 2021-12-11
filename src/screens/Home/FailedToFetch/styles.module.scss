@@ -1,0 +1,15 @@
+.failedMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+
+  p {
+    color: var(--background-contrast);
+  }
+
+  .emoji {
+    font-size: 3rem;
+  }
+}
