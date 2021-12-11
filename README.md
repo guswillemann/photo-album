@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://photo-album.guswillemann.vercel.app" target="_blank" rel="noopener">
+    <img alt="Photo Album card" src=".github/card-image.png" width="500" />
+    <p align="center">https://photo-album.guswillemann.vercel.app</p>
+  </a>
+</p>
 
-## Getting Started
+<br />
 
-First, run the development server:
+This project is the Front End Activity from [Leadster](https://leadster.com.br/) hiring process.
 
+---
+
+## Technologies
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Typescript](http://typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
+- [Jest](https://jestjs.io/)
+- [Testing Library](https://testing-library.com/)
+
+---
+
+## Project Requirements
+
+- The project must be a photo album site;
+- Should get the photos from the [Pexels API](https://www.pexels.com/api/documentation/);
+- Should have responsive layout;
+- Should have pagination;
+- Should have a Header and a Footer;
+- Should have a github repository;
+- Should have a README;
+
+---
+
+## Running the Project Locally
+- clone: 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/guswillemann/photo-album
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- install: 
+```bash
+yarn install
+# or
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+This project uses a environment variable for the Pexels API authorization key.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To get a key use the link: [https://www.pexels.com/api/new/](https://www.pexels.com/api/new/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+With the key in hand, set it on a `.env.local` file in the project root.
 
-## Learn More
+Template file available: `.example.env.local`:
+```
+EXTERNAL_PHOTOS_API_KEY="--> Your Key <--"
+```
 
-To learn more about Next.js, take a look at the following resources:
+- initialize server: 
+```bash
+yarn dev
+# or
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- running tests: 
+```bash
+yarn test
+# or
+npm run test
+```
