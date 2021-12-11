@@ -1,7 +1,7 @@
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/mixins.scss';
 
-.wrapper {
+.photoDetailsContainer {
   @include mixins.paper(var(--secondary-color), 0);
   width: calc(100% - 2rem);
   border-radius: var(--border-radius);

@@ -10,7 +10,7 @@ type PhotoDetailsProps = {
 
 const PhotoDetails: FC<PhotoDetailsProps> = ({ photoData }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.photoDetailsContainer}>
       <div className={styles.info}>
         <div>
           <span>Photographer</span>
