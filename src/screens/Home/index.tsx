@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { photosAPI } from '../../api';
 import { PhotosList } from '../../components';
 import { useSettingsContext } from '../../hooks';
@@ -16,6 +16,7 @@ export default function Home({ initialPageData }: HomeProps) {
   const [isFetching, setIsFetching] = useState(false);
   const autoLoadBoundry = useRef(null);
 
+  const hasMorePages = Boolean(pageData.nextPage);
   const handleLoadMore = () => setIsFetching(true);
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function Home({ initialPageData }: HomeProps) {
   return (
     <HomeWrapper>
       <PhotosList photoDataArr={pageData.photos} />
-      {!isAutoLoad 
+      {hasMorePages && !isAutoLoad 
         ? <LoadMoreBtn
             lodaMoreCallback={handleLoadMore}
             isFetching={isFetching}
