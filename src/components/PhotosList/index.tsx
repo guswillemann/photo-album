@@ -30,7 +30,11 @@ function PhotosList({ photoDataArr }: PhotosListProps) {
   }, [numberOfColumns]);
 
   return (
-    <div ref={setCssColumns} className={styles.photoListContainer}>
+    <div
+      ref={setCssColumns}
+      className={styles.photoListContainer}
+      data-testid="photoList"
+    >
       {columnsData.map((column, i) => (
         <ul key={`list-column-${i}`} className={styles.listColumn}>
           {column}
