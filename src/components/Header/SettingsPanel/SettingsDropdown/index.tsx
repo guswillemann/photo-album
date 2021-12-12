@@ -21,6 +21,7 @@ export default function SettingsDropdown({ isVisible }: SettingsDropdownProps) {
         styles.settingsDropdownContainer,
         isVisible && styles.visible,
       ])}
+      data-testid="settingsDropdown"
     >
       <div className={styles.option}>
         <span>Auto Load Photos</span>
