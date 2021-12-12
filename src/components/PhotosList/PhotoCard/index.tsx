@@ -14,7 +14,7 @@ export default function PhotoCard({ photoData }: PhotoProps) {
 
   return (
     <li
-      className={styles.wrapper}
+      className={styles.photoCardContainer}
     >
       <button onClick={toggleModal}>
         <Image
