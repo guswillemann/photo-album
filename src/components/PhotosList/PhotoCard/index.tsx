@@ -15,8 +15,9 @@ export default function PhotoCard({ photoData }: PhotoProps) {
   return (
     <li
       className={styles.photoCardContainer}
+      data-testid="photoCard"
     >
-      <button onClick={toggleModal}>
+      <button onClick={toggleModal}  data-testid="photoCardBtn">
         <Image
           src={photoData.src.large}
           width={photoData.width}
